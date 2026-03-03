@@ -1,6 +1,6 @@
 ## Contributing to Amour New Trading Bot
 
-Thank you for your interest in contributing to **Amour New Trading Bot** (a.k.a. `temporal-bot`) maintained by **@ amourification**.
+Thank you for your interest in contributing to **Binance Temporal Market Analysis Bot** (a.k.a. `BTMAB`) maintained by **@amourification**.
 
 This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**. By contributing, you agree that your contributions are released under the same license.
 
