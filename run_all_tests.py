@@ -7,29 +7,25 @@ from pathlib import Path
 from tqdm import tqdm
 
 
-TEST_FILES = [
-    "test_stops_utils.py",
-    "test_elliott_fib.py",
-    "test_cycle_time_utils.py",
-    "test_trade_suggestions.py",
-    "test_integration.py",
-    "test_backtest_binance_range.py",
-]
-
-
 def main() -> int:
     root = Path(__file__).resolve().parent
+    tests_dir = root / "tests"
     print("\n=== Temporal Bot — Test Runner ===\n")
+
+    if not tests_dir.exists():
+        print(f"Tests directory not found: {tests_dir}")
+        return 1
+
+    test_paths = sorted(tests_dir.glob("test_*.py"))
+    if not test_paths:
+        print(f"No test_*.py files found in {tests_dir}")
+        return 1
 
     results = []
 
-    with tqdm(total=len(TEST_FILES), desc="Running tests", unit="file") as bar:
-        for name in TEST_FILES:
-            test_path = root / name
-            if not test_path.exists():
-                results.append((name, False, "", f"File not found: {test_path}"))
-                bar.update(1)
-                continue
+    with tqdm(total=len(test_paths), desc="Running tests", unit="file") as bar:
+        for test_path in test_paths:
+            name = test_path.name
 
             bar.set_description(f"{name}")
             # By default, skip tests marked as \"slow\" (e.g. live backtests).
