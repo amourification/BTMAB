@@ -1,4 +1,4 @@
-## Contributing to Amour New Trading Bot
+## Contributing to BTMAB
 
 Thank you for your interest in contributing to **Binance Temporal Market Analysis Bot** (a.k.a. `BTMAB`) maintained by **@amourification**.
 
