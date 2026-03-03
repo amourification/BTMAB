@@ -1,4 +1,4 @@
-# Temporal Market Analysis Bot
+# BTMAB - Binance Temporal Market Analysis Bot
 
 A deterministic, cycle-based cryptocurrency market analysis system built on 12 mathematical equations. The bot identifies dominant price cycles, calculates optimal position sizing, and generates complete trade plans — delivered through a dark-themed desktop GUI and a Telegram bot with full chart exports.
 
@@ -27,7 +27,7 @@ A deterministic, cycle-based cryptocurrency market analysis system built on 12 m
 
 ## 1. What This Bot Does
 
-The Temporal Market Analysis Bot approaches markets from a purely mathematical perspective: it assumes that price movement contains measurable, recurring cycles that can be detected, quantified, and acted upon.
+The BTMAB approaches markets from a purely mathematical perspective: it assumes that price movement contains measurable, recurring cycles that can be detected, quantified, and acted upon.
 
 For any given trading pair and interval, the bot:
 
@@ -212,8 +212,8 @@ The bot uses `python-telegram-bot`'s built-in `asyncio` event loop with `concurr
 ### Step 1 — Clone the project
 
 ```bash
-git clone https://your-repo-url/temporal_bot.git
-cd temporal_bot
+git clone https://your-repo-url/BTMAB.git
+cd BTMAB
 ```
 
 ### Step 2 — Quick setup (recommended for non-technical users)
@@ -228,14 +228,14 @@ They create a `.venv` virtual environment and install all dependencies.
 **Windows (PowerShell):**
 
 ```powershell
-cd path\to\temporal_bot
+cd path\to\BTMAB
 .\setup.ps1
 ```
 
 **macOS / Linux / WSL:**
 
 ```bash
-cd /path/to/temporal_bot
+cd /path/to/BTMAB
 chmod +x setup.sh        # first time only
 ./setup.sh
 ```
@@ -368,14 +368,14 @@ After running the setup script once (`setup.ps1` on Windows or `setup.sh` on mac
 **Windows (PowerShell):**
 
 ```powershell
-cd path\to\temporal_bot
+cd path\to\BTMAB
 .\run_gui.ps1
 ```
 
 **macOS / Linux / WSL:**
 
 ```bash
-cd /path/to/temporal_bot
+cd /path/to/BTMAB
 chmod +x run_gui.sh    # first time only
 ./run_gui.sh
 ```
@@ -499,8 +499,8 @@ python -m bot.telegram_bot
 
 Expected output:
 ```
-2026-03-01 12:00:00 [INFO] temporal_bot.bot.telegram_bot — Bot started — commands registered
-2026-03-01 12:00:00 [INFO] temporal_bot.bot.telegram_bot — Starting polling…
+2026-03-01 12:00:00 [INFO] BTMAB.bot.telegram_bot — Bot started — commands registered
+2026-03-01 12:00:00 [INFO] BTMAB.bot.telegram_bot — Starting polling…
 ```
 
 Send `/start` in Telegram to verify the bot is running.
@@ -516,17 +516,17 @@ echo $! > bot.pid
 kill $(cat bot.pid)
 ```
 
-With `systemd` (`/etc/systemd/system/temporal-bot.service`):
+With `systemd` (`/etc/systemd/system/BTMAB.service`):
 
 ```ini
 [Unit]
-Description=Temporal Market Analysis Bot
+Description=BTMAB
 After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/path/to/temporal_bot
-EnvironmentFile=/path/to/temporal_bot/.env
+WorkingDirectory=/path/to/BTMAB
+EnvironmentFile=/path/to/BTMAB/.env
 ExecStart=/path/to/.venv/bin/python -m bot.telegram_bot
 Restart=on-failure
 RestartSec=10
@@ -538,9 +538,9 @@ WantedBy=multi-user.target
 Then:
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable temporal-bot
-sudo systemctl start temporal-bot
-sudo systemctl status temporal-bot
+sudo systemctl enable BTMAB
+sudo systemctl start BTMAB
+sudo systemctl status BTMAB
 ```
 
 ---
