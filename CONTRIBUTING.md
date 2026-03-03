@@ -16,7 +16,7 @@ This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**
 
 ```bash
 git clone <your-fork-or-origin-url>
-cd "Amour New Trading Bot/Project"
+cd "BTMAB"
 ```
 
 - **Install in editable mode with dev dependencies**
@@ -35,7 +35,7 @@ This installs the main dependencies plus tools like `pytest`, `ruff`, and `black
 - **Tests**: `tests/` (all `test_*.py` files)
 - **CLI entry points**:
   - GUI: `temporal-gui` → `main_gui:main`
-  - Telegram bot: `temporal-bot` → `bot.telegram_bot:main`
+  - Telegram bot: `BTMAB` → `bot.telegram_bot:main`
 
 > When adding new modules, put them under the appropriate package in `src/` and add corresponding tests under `tests/`.
 
