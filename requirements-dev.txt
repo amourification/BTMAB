@@ -1,0 +1,14 @@
+# Development & Testing Dependencies
+#
+# Install with:
+#   pip install -r requirements.txt -r requirements-dev.txt
+#
+# These are not required for running the GUI or Telegram bot in production.
+
+pytest>=7.0           # Integration and unit tests
+tqdm>=4.66.4          # Progress bars for test runner
+
+# Optional linters / formatters (install as needed)
+ruff>=0.5.0           # Fast linting (unused imports, style, etc.)
+black>=24.0.0         # Code formatter
+

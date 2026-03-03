@@ -1,0 +1,36 @@
+# ─────────────────────────────────────────────
+#  TEMPORAL ANALYSIS BOT — Dependencies
+#  Install with: pip install -r requirements.txt
+# ─────────────────────────────────────────────
+
+# Core data & APIs
+python-binance>=1.0.19          # Binance API client
+python-dotenv>=1.0.0            # .env file loader
+
+# Numerical & Scientific (core analytics stack)
+numpy>=1.26.4                   # Array operations (core of all engines)
+scipy>=1.13.0                   # FFT, signal processing, AR models
+pandas>=2.2.2                   # OHLCV DataFrames, CSV export
+statsmodels>=0.14.2             # ACF, AR model fitting
+
+# Charting & GUI
+matplotlib>=3.8.4               # All charts + export (PNG/PDF)
+mplfinance>=0.12.10b0           # Candlestick charts
+tkinter-tooltip>=2.1.0          # GUI tooltips for noob-friendly help
+
+# NOTE: Tkinter itself is a system package, not a pip package.
+# On Debian/Ubuntu install it with:
+#   sudo apt install python3-tk
+# On Fedora:
+#   sudo dnf install python3-tkinter
+# On Arch:
+#   sudo pacman -S tk
+
+# Telegram Bot (optional layer — Stage 7)
+python-telegram-bot>=21.3
+
+# Astronomy (Solar cycle — Eq 5)
+ephem>=4.1.5                    # Julian dates, solar positioning
+
+# Developer tools (not required in production) have moved to
+# requirements-dev.txt to keep the runtime environment lean.

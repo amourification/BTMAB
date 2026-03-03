@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "temporal-bot"
+version = "0.1.0"
+description = "Deterministic, cycle-based cryptocurrency market analysis bot with desktop GUI and Telegram interface."
+requires-python = ">=3.11"
+dependencies = [
+  "python-binance>=1.0.19",
+  "python-dotenv>=1.0.0",
+  "numpy>=1.26.4",
+  "scipy>=1.13.0",
+  "pandas>=2.2.2",
+  "statsmodels>=0.14.2",
+  "matplotlib>=3.8.4",
+  "mplfinance>=0.12.10b0",
+  "tkinter-tooltip>=2.1.0",
+  "python-telegram-bot>=21.3",
+  "ephem>=4.1.5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "tqdm>=4.66.4",
+  "ruff>=0.5.0",
+  "black>=24.0.0",
+]
+
+[project.scripts]
+temporal-gui = "main_gui:main"
+temporal-bot = "bot.telegram_bot:main"
+
+[tool.setuptools]
+packages = [
+  "bot",
+  "charts",
+  "consensus",
+  "data",
+  "engine",
+  "gui",
+  "risk",
+  "advanced",
+]
+
